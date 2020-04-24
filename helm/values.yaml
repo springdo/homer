@@ -1,0 +1,98 @@
+app_name: dev-ex-dashboard
+
+# Docker deets
+image_repository: quay.io
+image_name: dev-ex-dashboard
+image_namespace: springdo
+# likely over written by the Argo definition
+app_tag: latest
+
+# OCP route
+route: true
+
+# custom end point injected by config map. This is likely to changed
+config:
+  title: "🦄 Developer Experience 22 🔥"
+  subtitle: "Red Hat Open Innovation Labs"
+  logo: "https://www.redhat.com/cms/managed-files/RHOIL_LogoBadge_RGB_Default.svg"
+  # icon: "fas fa-skull-crossbones" Optional icon
+  # Optional message
+  # message:
+  #   # url: https://....
+  #   style: "is-dark" # See https://bulma.io/documentation/components/message/#colors for styling options.
+  #   title: "Demo !" 
+  #   content: "This is a dummy homepage demo. Find more information on github.com/bastienwirtz/homer"
+
+  # Optional navbar
+  # links: [] # Allows for navbar (dark mode, layout, and search) without any links
+  links:
+    - name: "Ubiquitous Journey"
+      icon: "fab fa-github"
+      url: "https://github.com/rht-labs/ubiquitous-journey"
+      target: '_blank' # optionnal html a tag target attribute
+    - name: "Open Management Portal"
+      icon: "fab fa-github"
+      url: "https://github.com/rht-labs/open-management-portal"
+    - name: "Helm Charts"
+      icon: "fab fa-github"
+      url: "https://github.com/rht-labs/helm-charts"
+    - name: "Helm Charts"
+      icon: "fab fa-github"
+      url: "https://github.com/rht-labs/helm-charts"
+
+  # Services
+  # First level array represent a group.
+  # Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
+  services:
+    - name: "DevOps"
+      icon: "fas fa-code-branch"
+      items:
+        - name: "Jenkins"
+          logo: "assets/tools/jenkins.png"
+          subtitle: "Continuous integration server"
+          tag: "CI"
+          url: "https://jenkins.io/"
+          target: '_blank' # optionnal html a tag target attribute
+        - name: "ArgoCD"
+          logo: "assets/tools/jenkins.png"
+          subtitle: "ArgoCD GitOps"
+          tag: "CI, GitOps"
+          url: ""
+          target: '_blank' # optionnal html a tag target attribute
+    - name: "Monitoring"
+      icon: "fas fa-heartbeat"
+      items:
+        - name: "M/Monit"
+          logo: "assets/tools/monit.png"
+          subtitle: "Monitor & manage all monit enabled hosts"
+          tag: "monit"
+          url: "https://mmonit.com/monit/"
+        - name: "Grafana"
+          logo: "assets/tools/grafana.png"
+          subtitle: "Metric analytics & dashboards"
+          url: "https://grafana.com/"
+        - name: "Kibana"
+          logo: "assets/tools/elastic.png"
+          subtitle: "Explore & visualize logs"
+          tag: "elk"
+          url: "https://www.elastic.co/products/kibana"
+        - name: "Website monitoring"
+          logo: "assets/tools/pingdom.png"
+          subtitle: "Pingdom public reports overview"
+          tag: "CI"
+          url: "https://www.pingdom.com/"
+    - name: "Project Management"
+      icon: "fas fa-tasks"
+      items:
+        - name: "Wekan"
+          logo: "https://avatars0.githubusercontent.com/u/11725037?s=200&v=4"
+          subtitle: "Wekan Tasks"
+          tag: "Wekan, kanban"
+          url: "https://wekan.github.io/"
+          target: '_blank' # optionnal html a tag target attribute
+        - name: "Mattermost"
+          logo: "https://mattermost-team-edition-dc-ci-cd.apps.s43.core.rht-labs.com"
+          subtitle: "Wekan Tasks"
+          tag: "Wekan, kanban"
+          url: "https://wekan.github.io/"
+          target: '_blank' # optionnal html a tag target attribute
